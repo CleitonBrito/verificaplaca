@@ -11,18 +11,13 @@ export function Header(){
     }
 
     return(
-        <header className="admin-header">
-            <nav className="nav-header">
-                <button onClick={ handleLogout }>
-                    <BiLogOut size={28} color="#DB2629" />
-                </button>
-
-                <Link to="/admin">
-                    Links
-                </Link>
-                <Link to="/admin/social">
-                    Redes Sociais
-                </Link>
+        <header className="admin-header absolute top-10 right-2 md:right-20  flex sm:w-1/4 w-1/2 justify-end">
+            <nav className="nav-header flex">
+                <div className='flex flex-col justify-center items-center gap-2'>
+                    <button className='' onClick={ handleLogout }>
+                        <p className='text-gray-900 font-bold text-white rounded-full p-3'>Sair</p>
+                    </button>
+                </div>
             </nav>
         </header>
     )

@@ -25,8 +25,8 @@ export default function Login(){
 
         signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            toast.success("Bem vindo! XD")
-            navigate("/admin", { replace: true })
+            toast.success("Bem vindo!")
+            navigate("/", { replace: true })
         }).catch(()=> {
             toast.error("Erro ao fazer login!");
         });
@@ -35,6 +35,7 @@ export default function Login(){
     return (
         <div className="login-container">
             <Logo />
+            <h1>Verifica Placa</h1>
 
             <form className="form" onSubmit={ handleLogin }>
                 <Input 

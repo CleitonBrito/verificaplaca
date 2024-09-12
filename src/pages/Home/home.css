@@ -16,6 +16,17 @@
     font-size: clamp(1em, 1em + 1vw, 3em);
 }
 
+button#consultar {
+    height: 36px;
+    border-radius: 4px;
+    background-color: #fff000;
+    border: 0;
+    font-size: 18px;
+    color: #212121;
+    font-weight: semi-bold;
+    transition: transform 0.4s;
+}
+
 .home-container span {
     color: #f1f1f1;
     margin-bottom: 18px;

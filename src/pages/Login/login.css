@@ -5,6 +5,7 @@
     justify-content: center;
     height: 100vh;
     width: 100%;
+    padding: 0 40px;
 }
 
 .form {
@@ -17,13 +18,27 @@
 .form button {
     height: 36px;
     border-radius: 4px;
-    background-color: #3366ff;
+    background-color: #fff000;
     border: 0;
     font-size: 18px;
-    color: #fff;
+    color: #212121;
+    font-weight: semi-bold;
     transition: transform 0.4s;
 }
 
 .form button:hover {
     transform: scale(1.05);
+}
+
+h1 {
+    margin-bottom: 14px;
+    color: #fff;
+    font-size: 44px;
+    font-size: clamp(1em, 1em + 1vw, 3em);
+}
+
+@media screen and (max-width: 550px){
+    h1 {
+        font-size: 22px;
+    }
 }

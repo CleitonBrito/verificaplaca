@@ -6,9 +6,7 @@
 }
 
 .nav-header {
-    width: 100%;
-    background-color: #fff;
-    height: 48px;
+    height: 65px;
     display: flex;
     align-items: center;
     border-radius: 4px;

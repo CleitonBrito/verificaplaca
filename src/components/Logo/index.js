@@ -1,11 +1,7 @@
 import './logo.css'
 
-import { Link } from 'react-router-dom'
-
 export function Logo(){
     return(
-        <Link to="/">
-            <img className="img-logo" src="../logo.png" alt=""/>
-        </Link>
+        <img className="img-logo rounded-full w-12 my-1" src="../logo.png" alt=""/>
     )
 }
