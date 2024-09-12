@@ -24,7 +24,6 @@ export default function Home(){
     
     async function verificaPlaca(e){
         e.preventDefault();
-        const placas = placaInput
         const placasRef = collection(db, "placas")
         const queryRef = query(placasRef, where('placa', '==', placaInput.toUpperCase()), where('created', '>=', new Date(Date.now() - 24*60*60*1000)), orderBy('created', 'desc')) // >= e - 24
         await getDocs(queryRef)
