@@ -20,7 +20,7 @@ import {
 
 export default function Home(){
     const [placaInput, setPlacaInput] = useState("")
-     const [disabled, setDisabled] = useState(false)
+    const [disabled, setDisabled] = useState(false)
     let result = '';
     
     async function verificaPlaca(e){

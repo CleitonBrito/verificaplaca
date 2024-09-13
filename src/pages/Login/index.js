@@ -12,11 +12,13 @@ import { toast } from 'react-toastify'
 export default function Login(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [disabled, setDisabled] = useState(false)
 
     const navigate = useNavigate();
 
     function handleLogin(e){
         e.preventDefault();
+        setDisabled(true)
 
         if (email === '' || password === ''){
             alert("Preencha todos os campos!");
@@ -29,6 +31,10 @@ export default function Login(){
             navigate("/", { replace: true })
         }).catch(()=> {
             toast.error("Erro ao fazer login!");
+        }).finally(() => {
+            setTimeout(function() {
+                setDisabled(false)
+            }, 1000);
         });
     }
 
@@ -51,7 +57,13 @@ export default function Login(){
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type="submit">Acessar</button>
+                <button type="submit"
+                    disabled={ disabled }
+                    >
+                    {
+                    (disabled === false) ? "Acessar" : "Aguarde..."
+                    }
+                </button>
             </form>
         </div>
     )
