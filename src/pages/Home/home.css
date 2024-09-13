@@ -3,10 +3,11 @@
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    height: auto;
+    height: 50vh;
     padding: 50px 0;
     align-items: center;
     justify-content: center;
+    padding-button: 100px;
 }
 
 .home-container h1 {
@@ -25,6 +26,10 @@ button#consultar {
     color: #212121;
     font-weight: semi-bold;
     transition: transform 0.4s;
+}
+
+button#consultar:disabled {
+    filter: contrast(50%)
 }
 
 .home-container span {

@@ -20,12 +20,14 @@ import {
 
 export default function Home(){
     const [placaInput, setPlacaInput] = useState("")
+     const [disabled, setDisabled] = useState(false)
     let result = '';
     
     async function verificaPlaca(e){
         e.preventDefault();
-        const placasRef = collection(db, "placas")
-        const queryRef = query(placasRef, where('placa', '==', placaInput.toUpperCase()), where('created', '>=', new Date(Date.now() - 24*60*60*1000)), orderBy('created', 'desc')) // >= e - 24
+        setDisabled(true)
+        const placasRef = await collection(db, "placas")
+        const queryRef = await query(placasRef, where('placa', '==', placaInput.toUpperCase()), where('created', '>=', new Date(Date.now() - 24*60*60*1000)), orderBy('created', 'desc')) // >= e - 24
         await getDocs(queryRef)
         .then((snapshot) => {
             if(!snapshot.empty){
@@ -47,7 +49,7 @@ export default function Home(){
     async function registrarPlaca(){
         if(placaInput !== ''){
             if(result === ''){
-                addDoc(collection(db, "placas"), {
+                await addDoc(collection(db, "placas"), {
                     placa: placaInput.toUpperCase(),
                     created: new Date()
                 })
@@ -77,7 +79,10 @@ export default function Home(){
             })
         }
         result = '';
-            
+
+        setTimeout(function() {
+            setDisabled(false)
+        }, 1000);
     }
 
     return (
@@ -97,9 +102,12 @@ export default function Home(){
                             />
                     </div>
                     <button id="consultar" type='submit'
-                        className='p-2 mt-4 uppercase font-bold text-white rounded-m'
+                        className='p-2 uppercase font-bold text-white rounded-m'
+                        disabled={ disabled }
                         >
-                        Consultar
+                        {
+                        (disabled === false) ? "Consultar" : "Aguarde..."
+                        }
                     </button>
                 </form>
             </main>
