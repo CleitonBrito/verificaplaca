@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import Home from './pages/Home'
 import Login from './pages/Login'
-import History from './pages/History'
+import Metrics from './pages/Metrics'
 import Error from './pages/Error'
 
 import Private from './routes/Private';
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
         element: <Login />
     },
     {
-        path: '/history',
-        element: <Private> <History /> </Private>
+        path: '/metrics',
+        element: <Private> <Metrics /> </Private>
     },
     {
         path: '*',
