@@ -15,13 +15,13 @@ export function Header(){
         <header className="admin-header absolute top-10 flex sm:w-1/2 w-1/2 justify-end">
             <nav className="nav-header flex">
                 <div className='flex justify-center items-center gap-2'>
-                    {
+                    {/* {
                         <Link to={ (location.pathname === '/') ? '/metrics' : '..' }>
                             <button className='rounded-full'>
                                 <p className='font-bold text-white p-3'>{ (location.pathname === '/') ? "Métricas" : "Voltar" }</p>
                             </button>
                         </Link>
-                    }
+                    } */}
                     <button className='rounded-full' onClick={ handleLogout }>
                         <p className='font-bold text-white p-3'>Sair</p>
                     </button>

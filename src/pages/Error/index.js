@@ -11,7 +11,7 @@ export default function Error(){
             <p>Esta página que você está procurando NÃO existe!</p>
 
             <Link className="link" to="/">
-                Voltar para a Home
+                Voltar para o Início
             </Link>
         </div>
     )
