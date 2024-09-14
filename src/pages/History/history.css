@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px 0;
+    align-items: center;
+    padding-button: 100px;
+}
+
+#table-placas tbody tr td {
+    padding: 5px;
+}
