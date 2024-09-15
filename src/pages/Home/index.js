@@ -35,7 +35,7 @@ export default function Home(){
             if(!snapshot.empty){
                 aux_result = snapshot.docs[0].data()
                 if(aux_result.created.toDate().toLocaleDateString() === date){
-                    if(aux_result.placa !== 'JQF9755' && aux_result.placa !== 'PKU5413')
+                    if(aux_result.placa !== 'JQF9755' && aux_result.placa !== 'RPU2A96')
                         result = aux_result
                 }
             }
