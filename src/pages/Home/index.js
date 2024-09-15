@@ -22,16 +22,21 @@ export default function Home(){
     const [placaInput, setPlacaInput] = useState("")
     const [disabled, setDisabled] = useState(false)
     let result = '';
+    let aux_result = '';
     
     async function verificaPlaca(e){
         e.preventDefault();
         setDisabled(true)
-        const placasRef = await collection(db, "placas")
-        const queryRef = await query(placasRef, where('placa', '==', placaInput.toUpperCase()), where('created', '>=', new Date(Date.now() - 24*60*60*1000)), orderBy('created', 'desc')) // >= e - 24
+        const placasRef = collection(db, "placas")
+        let date = new Date(Date.now()).toLocaleDateString()
+        const queryRef = query(placasRef, where('placa', '==', placaInput.toUpperCase()), orderBy('created', 'desc'))
         await getDocs(queryRef)
         .then((snapshot) => {
             if(!snapshot.empty){
-                result = snapshot.docs[0].data()
+                aux_result = snapshot.docs[0].data()
+                if(aux_result.created.toDate().toLocaleDateString() === date){
+                    result = aux_result
+                }
             }
         })
         .catch((e) => {
