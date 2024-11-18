@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Metrics from './pages/Metrics'
 import Error from './pages/Error'
+import Maintenance from './pages/Maintenance'
 
 import Private from './routes/Private';
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
         path: '*',
         element: <Error />
+    },
+    {
+        path: '/maintenance',
+        element: <Maintenance />
     }
 ])
 
